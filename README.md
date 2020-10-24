@@ -16,7 +16,7 @@ void predatorPrey(double t, vec input, vec* output) {
 ```
 ##### 2. Define the range of time you would like to solve.
 ```C
-timeHeader time = timeHeaderMake(0.0, 20.0, 100000);
+timeHeader time = timeHeaderMake(0, 20.0, 100000);
 ```
 ##### 3. Initialize the initial values for your equation
 ```C
