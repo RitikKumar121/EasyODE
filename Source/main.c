@@ -111,15 +111,17 @@ void fileReport(inputHeader input, outputHeader output, char* fileName) {
         return;
     }
     fprintf(f, "t\t");
-    for(int i = 0; i < input.initialValues.length-1; i++) {
+   int i;
+    for( i = 0; i < input.initialValues.length-1; i++) {
         fprintf(f, "y[%d]\t", i);
     }
     fprintf(f, "y[%d]\n", input.initialValues.length-1);
     
-    for(int i = 0; i < output.length; i++) {
+    for( i = 0; i < output.length; i++) {
         double t = input.time.tFrom + ((input.time.tTo - input.time.tFrom)/input.time.interval) * i;
         fprintf(f, "%1.6f\t", t);
-        for(int j = 0; j < input.initialValues.length-1; j++) {
+        int j;
+        for( j = 0; j < input.initialValues.length-1; j++) {
             fprintf(f, "%1.10f\t", output.results[i].arr[j]);
         }
         fprintf(f, "%1.10f\n", output.results[i].arr[input.initialValues.length-1]);
